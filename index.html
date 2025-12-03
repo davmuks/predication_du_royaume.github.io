@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nom du Site - Prédications</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">Nom du Site</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="predications.html">Prédications</a></li>
+                <li><a href="compte.html">Mon Compte</a></li>
+                <li><a href="#newsletter">Newsletter</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="home-content">
+        <h1>Bienvenue sur Nom du Site</h1>
+
+        <section class="search-section">
+            <h2>Rechercher une Prédication</h2>
+            <div class="search-bar">
+                <input type="text" placeholder="Titre ou nom du pasteur..." id="search-input">
+                <button type="button">Rechercher</button>
+            </div>
+        </section>
+
+        <section class="predications-list">
+            <h2>Nos Dernières Prédications</h2>
+            <article class="predication-card">
+                <h3>Titre de la Prédication 1</h3>
+                <p class="pastor-name">Pasteur Jean Dupont</p>
+                <p class="summary">Un bref résumé de la prédication...</p>
+                <a href="predication-detail.html" class="cta-button">Lire la suite</a>
+            </article>
+
+            <div class="more-button">
+                <a href="predications.html" class="cta-button secondary">Voir toutes les prédications</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2024 Nom du Site. Tous droits réservés.</p>
+        <div class="footer-links">
+            <a href="#">Politique de Confidentialité</a>
+            <a href="#">Conditions d'Utilisation</a>
+            </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+/* Définition des Variables de Couleurs */
+:root {
+    --color-primary: #E50000; /* Rouge vif pour l'action et l'accent */
+    --color-secondary: #001F3F; /* Bleu foncé pour les accents et le texte de l'en-tête */
+    --color-background: #FFFFFF; /* Blanc pour le fond principal */
+    --color-text: #333333; /* Gris foncé pour le texte principal */
+    --color-light-bg: #F8F8F8; /* Un gris très clair pour les sections */
+}
+
+/* Styles Généraux et Typographie */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Police moderne et lisible */
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-background);
+}
+
+.home-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- 1. En-tête et Navigation --- */
+.main-header {
+    background-color: var(--color-secondary); /* Bleu foncé */
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.main-nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Boutons et Liens d'Action (CTA) --- */
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--color-primary); /* Rouge vif */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background-color 0.3s;
+    border: 2px solid var(--color-primary);
+}
+
+.cta-button:hover {
+    background-color: #CC0000; /* Un rouge légèrement plus foncé */
+}
+
+.cta-button.secondary {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+}
+
+.cta-button.secondary:hover {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+/* --- Liste des Prédications --- */
+.predications-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive Grid */
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.predication-card {
+    border: 1px solid #ddd;
+    border-left: 5px solid var(--color-primary); /* Accent rouge */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.predication-card h3 {
+    color: var(--color-secondary);
+    margin-bottom: 10px;
+}
+
+.pastor-name {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* --- Pied de Page --- */
+.main-footer {
+    background-color: var(--color-light-bg);
+    color: var(--color-text);
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #eee;
+    margin-top: 50px;
+}
+
+.footer-links a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* Pour le Responsive Design (Adaptabilité) - Ex. pour mobile */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        padding-top: 10px;
+    }
+
+    .main-nav ul li a {
+        padding: 5px 0;
+    }
+
+    .predications-list {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+    }
+}

@@ -150,3 +150,69 @@ body {
         grid-template-columns: 1fr; /* Une seule colonne sur mobile */
     }
 }
+
+/* --- Barre de Recherche Stylée (Inspirée de Google) --- */
+
+.search-section {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.search-section h2 {
+    margin-bottom: 20px;
+    color: var(--color-secondary);
+}
+
+.search-bar {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère comme Google */
+    border-radius: 25px; /* Bords arrondis */
+    overflow: hidden; /* Assure que le contenu ne dépasse pas les bords arrondis */
+    background-color: var(--color-background);
+    border: 1px solid #ddd; /* Bordure fine pour la définition */
+}
+
+.search-bar input[type="text"] {
+    flex-grow: 1;
+    padding: 12px 20px;
+    border: none; /* Supprime la bordure native */
+    outline: none;
+    font-size: 1em;
+    border-radius: 25px 0 0 25px; /* Bords arrondis uniquement à gauche */
+}
+
+.search-bar button {
+    background-color: var(--color-primary); /* Rouge vif */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s;
+    /* On n'arrondit pas le bouton à gauche pour qu'il s'aligne avec l'input */
+    border-radius: 0 25px 25px 0; /* Bords arrondis uniquement à droite */
+}
+
+.search-bar button:hover {
+    background-color: #CC0000;
+}
+
+/* Ajustement du Responsive pour la barre de recherche */
+@media (max-width: 650px) {
+    .search-bar {
+        border-radius: 8px; /* Moins d'arrondi sur mobile pour optimiser l'espace */
+    }
+    .search-bar input[type="text"],
+    .search-bar button {
+        border-radius: 0;
+    }
+    .search-bar input[type="text"] {
+        padding: 10px 15px;
+    }
+    .search-bar button {
+        padding: 10px 15px;
+    }
+}
+

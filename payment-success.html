@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paiement Réussi - Prédication du Royaume</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> 
+    
+    <style>
+        :root {
+            --color-primary: #E50000;
+            --color-secondary: #001F3F;
+            --color-success: #28a745; /* Vert */
+            --color-light-bg: #F8F8F8;
+            --color-background: #FFFFFF;
+        }
+
+        .success-container {
+            max-width: 650px;
+            margin: 60px auto;
+            padding: 40px;
+            background-color: var(--color-background);
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border-top: 5px solid var(--color-success);
+        }
+
+        .success-container h1 {
+            color: var(--color-success);
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+        
+        .success-container p {
+            font-size: 1.1em;
+            color: var(--color-text);
+            margin-bottom: 25px;
+        }
+
+        .icon-check {
+            font-size: 5em;
+            color: var(--color-success);
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .confirmation-box {
+            background-color: var(--color-light-bg);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border: 1px dashed #ddd;
+        }
+        
+        .confirmation-box strong {
+            display: block;
+            margin-top: 5px;
+            color: var(--color-secondary);
+            font-size: 1.2em;
+        }
+
+        .download-link {
+            font-weight: 700;
+            color: var(--color-primary);
+            text-decoration: underline;
+        }
+        
+        /* Bouton Retour Accueil */
+        .cta-button.home {
+            background-color: var(--color-secondary);
+            border-color: var(--color-secondary);
+        }
+
+        .cta-button.home:hover {
+            background-color: #003366;
+        }
+    </style>
+    </head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">Prédication du Royaume</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="predications.html">Prédications</a></li>
+                <li><a href="compte.html">Mon Compte</a></li>
+                <li><a href="#newsletter">Newsletter</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="success-container">
+            <span class="icon-check">✔</span> 
+            
+            <h1 id="success-message">Merci pour votre soutien !</h1>
+            
+            <p>
+                Votre paiement a été traité avec succès. Vous devriez recevoir un email de confirmation contenant votre lien de téléchargement dans les prochaines minutes.
+            </p>
+
+            <div class="confirmation-box">
+                <p>Récapitulatif de votre commande :</p>
+                <p id="order-details-title"></p>
+                <p id="order-details-email"></p>
+                
+                <hr style="border: 0; border-top: 1px dashed #ccc; margin: 15px 0;">
+                
+                <p>
+                    <a href="#" class="download-link" id="direct-download-link">Cliquez ici pour télécharger votre prédication immédiatement.</a>
+                </p>
+            </div>
+
+            <p style="font-size: 0.9em; color: #666; margin-top: 20px;">
+                <span id="email-status"></span>
+            </p>
+            
+            <a href="index.html" class="cta-button home">Retourner à l'Accueil</a>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2024 Prédication du Royaume. Tous droits réservés.</p>
+        <div class="footer-links">
+            <a href="#">Politique de Confidentialité</a>
+            <a href="#">Conditions d'Utilisation</a>
+        </div>
+    </footer>
+
+    <script src="script-success.js"></script> 
+</body>
+</html>

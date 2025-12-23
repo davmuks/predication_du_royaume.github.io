@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paiement Sécurisé - Prédication du Royaume</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> 
+
+    <script type="text/javascript" src="https://js.squareup.com/v2/paymentform"></script>
+    <script type="text/javascript" src="https://sandbox.web.squarecdn.com/v1/square.js"></script>
+    
+    <style>
+        /* Définition des Variables de Couleurs (Réutilisées) */
+        :root {
+            --color-primary: #E50000; /* Rouge vif */
+            --color-secondary: #001F3F; /* Bleu foncé */
+            --color-background: #FFFFFF;
+            --color-text: #333333;
+            --color-light-bg: #F8F8F8;
+            --color-success: #28a745; /* Vert pour succès */
+        }
+
+        /* Styles Spécifiques au Formulaire de Paiement */
+        .payment-container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: var(--color-light-bg);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .payment-container h1 {
+            color: var(--color-secondary);
+            text-align: center;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 15px;
+        }
+        
+        /* Section Résumé de la Commande */
+        .order-summary {
+            background-color: var(--color-background);
+            border: 1px solid #eee;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .order-summary p {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.1em;
+            margin-bottom: 8px;
+        }
+
+        .order-summary .total {
+            font-weight: 700;
+            color: var(--color-primary);
+            border-top: 1px dashed #ddd;
+            padding-top: 10px;
+        }
+        
+        /* Styles de formulaire */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 700;
+            color: var(--color-text);
+        }
+
+        .form-group input[type="email"],
+        .form-group input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        
+        /* Placeholder pour le module de paiement (Stripe/Square) */
+        .payment-module-placeholder {
+            min-height: 100px;
+            background-color: #e9e9e9;
+            border: 1px dashed #aaa;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        /* Bouton de confirmation */
+        .cta-button.confirm-pay {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.2em;
+            margin-top: 20px;
+            background-color: var(--color-success);
+            border-color: var(--color-success);
+        }
+
+        .cta-button.confirm-pay:hover {
+            background-color: #1e7e34;
+            border-color: #1e7e34;
+        }
+    </style>
+    </head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">Prédication du Royaume</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="predications.html">Prédications</a></li>
+                <li><a href="compte.html">Mon Compte</a></li>
+                <li><a href="#newsletter">Newsletter</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="payment-container">
+            <h1>Finaliser votre Commande</h1>
+
+            <div class="order-summary">
+                <p><span>Article :</span> <strong id="sermon-title">Chargement...</strong></p>
+                <p><span>Prêcheur :</span> <strong id="sermon-pastor">Chargement...</strong></p>
+                <p class="total"><span>Total à Payer :</span> <strong id="sermon-price">Chargement...</strong></p>
+            </div>
+
+            <form id="payment-form">
+                <h2>1. Informations de Facturation</h2>
+                
+                <div class="form-group">
+                    <label for="user_name">Nom et Prénom</label>
+                    <input type="text" id="user_name" name="user_name" required placeholder="Votre nom complet">
+                </div>
+                
+                <div class="form-group">
+                    <label for="user_email">Adresse E-mail (où sera envoyé le lien)</label>
+                    <input type="email" id="user_email" name="user_email" required placeholder="exemple@mail.com">
+                </div>
+
+                <h2>2. Paiement Sécurisé</h2>
+                
+                <div class="form-group" id="card-container">
+                    
+                </div>
+                
+                <p style="font-size: 0.9em; text-align: center; margin-top: 10px;">
+                    <i style="color: var(--color-success);">Paiement 100% sécurisé.</i>
+                </p>
+
+                <button type="submit" class="cta-button confirm-pay" id="sq-creditcard">Confirmer le Paiement (5,00 €)</button>
+            </form>
+            
+            <p style="text-align: center; margin-top: 20px;">
+                <a href="predications.html" style="color: #666; font-size: 0.9em;">Annuler et retourner au catalogue</a>
+            </p>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2024 Prédication du Royaume. Tous droits réservés.</p>
+        <div class="footer-links">
+            <a href="#">Politique de Confidentialité</a>
+            <a href="#">Conditions d'Utilisation</a>
+        </div>
+    </footer>
+
+    <script src="script-payment.js"></script> 
+</body>
+</html>

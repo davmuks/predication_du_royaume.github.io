@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paiement Sécurisé - Prédication du Royaume</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <script type="text/javascript" src="https://js.squareup.com/v2/paymentform"></script>
+    <script type="text/javascript" src="https://sandbox.web.squarecdn.com/v1/square.js"></script>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">Prédication du Royaume</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="predications.html">Prédications</a></li>
+                <li><a href="compte.html">Mon Compte</a></li>
+                <li><a href="#newsletter">Newsletter</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="payment-content">
+        <div class="form-container">
+            
+            <section class="payment-header">
+                <h2>💳 Paiement Sécurisé pour le Téléchargement PDF</h2>
+                <p class="item-description">Prédication: **La Bonne Nouvelle du Royaume de Dieu**</p>
+                <p class="price">Montant : **5,00 €**</p>
+            </section>
+            
+            <hr>
+
+            <form id="payment-form" class="payment-form">
+                
+                <p class="security-note">
+                    <i class="fas fa-lock"></i> Transaction sécurisée par **Square** (HTTPS).
+                </p>
+
+                <div class="form-group">
+                    <label for="card-holder">Nom du Titulaire de la Carte</label>
+                    <input type="text" id="card-holder" name="card_holder" required placeholder="Ex: JEAN DUPONT">
+                </div>
+
+                <div class="form-group">
+                    <div id="card-container"></div>
+                </div>
+                
+                <button type="button" id="sq-creditcard" class="cta-button submit-payment">
+                    Payer 5,00 € et Télécharger
+                </button>
+
+            </form>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2024 Prédication du Royaume. Tous droits réservés.</p>
+        <div class="footer-links">
+            <a href="#">Politique de Confidentialité</a>
+            <a href="#">Conditions d'Utilisation</a>
+        </div>
+    </footer>
+    
+    <script src="https://kit.fontawesome.com/votre_code_font_awesome.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>

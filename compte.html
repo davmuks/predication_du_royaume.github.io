@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Compte - Prédication du Royaume</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">Prédication du Royaume</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="predications.html">Prédications</a></li>
+                <li><a href="compte.html">Mon Compte</a></li>
+                <li><a href="#newsletter">Newsletter</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="account-content">
+        <div class="account-container">
+            
+            <h2 class="account-title">Accédez à votre Espace Personnel</h2>
+            
+            <div class="tab-container">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" onclick="showTab('login')">Se Connecter</button>
+                    <button class="tab-btn" onclick="showTab('register')">Créer un Compte</button>
+                </div>
+                
+                <div id="login" class="tab-content active">
+                    <h3>Connexion</h3>
+                    <form action="/login" method="POST">
+                        <div class="form-group">
+                            <label for="login-email">Adresse E-mail</label>
+                            <input type="email" id="login-email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Mot de passe</label>
+                            <input type="password" id="login-password" name="password" required>
+                        </div>
+                        <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+                        <button type="submit" class="cta-button submit-account-btn">Se Connecter</button>
+                    </form>
+                </div>
+                
+                <div id="register" class="tab-content">
+                    <h3>Inscription</h3>
+                    <form action="/register" method="POST">
+                         <div class="form-group">
+                            <label for="register-name">Nom d'Utilisateur</label>
+                            <input type="text" id="register-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-email">Adresse E-mail</label>
+                            <input type="email" id="register-email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-password">Mot de passe</label>
+                            <input type="password" id="register-password" name="password" required>
+                        </div>
+                        <button type="submit" class="cta-button submit-account-btn">Créer mon Compte</button>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2024 Prédication du Royaume. Tous droits réservés.</p>
+        <div class="footer-links">
+            <a href="#">Politique de Confidentialité</a>
+            <a href="#">Conditions d'Utilisation</a>
+        </div>
+    </footer>
+    
+    <script>
+        // Fonction JavaScript simple pour basculer entre les onglets Connexion et Inscription
+        function showTab(tabId) {
+            // Masquer tout le contenu
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            // Désactiver tous les boutons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Afficher le contenu ciblé
+            document.getElementById(tabId).classList.add('active');
+            // Activer le bouton correspondant
+            document.querySelector(`.tab-btn[onclick="showTab('${tabId}')"]`).classList.add('active');
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

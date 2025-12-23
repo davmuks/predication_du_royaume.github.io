@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Détail de la Prédication - Prédication du Royaume</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> 
+    
+    <style>
+        /* Styles spécifiques à la page de détail */
+        .detail-content {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: var(--color-background);
+            border-radius: 8px;
+        }
+
+        .detail-header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--color-light-bg);
+            margin-bottom: 30px;
+        }
+
+        .detail-header h1 {
+            color: var(--color-secondary);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .pastor-info {
+            font-size: 1.1em;
+            color: #666;
+            font-style: italic;
+        }
+
+        .full-summary p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+        
+        /* Conteneur pour le bouton d'achat */
+        .purchase-container {
+            text-align: center;
+            background-color: var(--color-light-bg);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            margin-top: 40px;
+        }
+        
+        .purchase-container h3 {
+            color: var(--color-primary);
+            margin-bottom: 15px;
+        }
+        
+        .purchase-container .cta-button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+        }
+        
+        /* Squelette de chargement initial (sera rempli par JS) */
+        .skeleton-loading {
+            text-align: center;
+            padding: 50px;
+            color: #aaa;
+        }
+    </style>
+
+    <style>
+        /* Container qui cache 50% du bas */
+        .half-iframe {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #ddd;
+        }
+        
+        /* L'iframe elle-même est plus grande */
+        .half-iframe iframe {
+            width: 100%;
+            height: 800px; /* Double de la hauteur visible */
+            border: none;
+        }
+        
+        /* Indicateur visuel */
+        .half-iframe::before {
+            content: "▼ 50% du contenu visible ▼";
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            z-index: 10;
+        }
+    </style>
+
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">Prédication du Royaume</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="predications.html">Prédications</a></li>
+                <li><a href="compte.html">Mon Compte</a></li>
+                <li><a href="#newsletter">Newsletter</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="detail-content" id="predication-detail-container">
+            <div class="skeleton-loading">Chargement des détails de la prédication...</div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2024 Prédication du Royaume. Tous droits réservés.</p>
+        <div class="footer-links">
+            <a href="#">Politique de Confidentialité</a>
+            <a href="#">Conditions d'Utilisation</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script> 
+
+</body>
+</html>

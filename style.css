@@ -37,9 +37,17 @@ body {
     align-items: center;
 }
 
+/* --- NOUVEAUX STYLES POUR LE LOGO IMAGE --- */
+.header-logo {
+    height: 40px; /* Définir une hauteur standard pour le logo */
+    width: auto; /* Maintient le ratio d'aspect */
+    vertical-align: middle; /* Alignement vertical si nécessaire */
+}
+
+/* Modifiez si nécessaire l'alignement du conteneur .logo si vous en avez besoin */
 .logo {
-    font-size: 1.8em;
-    font-weight: 700;
+    /* Supprimez le style de police si vous ne voulez plus de texte visible */
+    font-size: 0; 
 }
 
 .main-nav ul {
@@ -90,9 +98,13 @@ body {
 /* --- Liste des Prédications --- */
 .predications-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive Grid */
+    /* On change la grille pour n'avoir qu'UNE SEULE colonne à 100% de la largeur */
+    grid-template-columns: 1fr;
     gap: 30px;
     margin-top: 30px;
+    max-width: 600px; /* Optionnel : Limiter la largeur du conteneur pour que les cartes ne soient pas trop grandes */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .predication-card {
@@ -216,3 +228,568 @@ body {
     }
 }
 
+/* --- Style de la Section Vision (Trône de Feu) --- */
+
+.vision-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    margin: 50px 0;
+    padding: 40px;
+    background-color: var(--color-light-bg); /* Fond gris très clair */
+    border-left: 8px solid var(--color-primary); /* Ligne rouge à gauche */
+    border-radius: 8px;
+}
+
+.throne-image {
+    max-width: 40%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.vision-text {
+    max-width: 60%;
+}
+
+.vision-text h2 {
+    color: var(--color-secondary);
+    margin-bottom: 15px;
+    font-size: 2em;
+}
+
+.vision-text .quote {
+    font-size: 1.2em;
+    font-style: italic;
+    color: var(--color-text);
+    padding: 10px 0;
+}
+
+.vision-text cite {
+    display: block;
+    margin-top: 10px;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+/* Ajustement pour le Responsive Design (Mobile) */
+@media (max-width: 768px) {
+    .vision-section {
+        flex-direction: column; /* L'image au-dessus du texte */
+        padding: 20px;
+    }
+
+    .throne-image,
+    .vision-text {
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .throne-image {
+        margin-bottom: 20px;
+    }
+}
+
+/* --- Styles de la Page de Détail de Prédication --- */
+
+.predication-detail-content {
+    padding: 40px 20px;
+}
+
+.content-wrapper {
+    max-width: 800px; /* Limiter la largeur pour une meilleure lisibilité du texte long */
+    margin: 0 auto;
+}
+
+.back-link {
+    display: inline-block;
+    color: var(--color-primary);
+    text-decoration: none;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.predication-detail-content h1 {
+    color: var(--color-secondary);
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.pastor-info {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* --- Mise en page du Contenu (Article) --- */
+.full-sermon-text h2,
+.full-sermon-text h3 {
+    color: var(--color-primary);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid rgba(229, 0, 0, 0.1); /* Ligne subtile sous les titres */
+    padding-bottom: 5px;
+}
+
+.full-sermon-text p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Style de la citation (Blockquote) */
+blockquote {
+    background-color: var(--color-light-bg);
+    border-left: 5px solid var(--color-secondary);
+    padding: 15px 20px;
+    margin: 20px 0;
+    font-style: italic;
+    color: var(--color-secondary);
+}
+
+blockquote cite {
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+    font-weight: 400;
+    color: #666;
+}
+
+.full-sermon-text ul {
+    list-style-type: disc;
+    margin-left: 40px;
+    margin-bottom: 20px;
+}
+
+/* --- Section de Téléchargement --- */
+.download-cta {
+    text-align: center;
+    margin: 40px 0;
+    padding: 30px;
+    background-color: #fcebeb; /* Rouge très pâle */
+    border: 1px dashed var(--color-primary);
+    border-radius: 8px;
+}
+
+.download-cta p {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #999;
+}
+
+.download-button {
+    font-size: 1.1em;
+    padding: 15px 30px;
+}
+
+/* --- Section de Partage Social --- */
+.social-share {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+.social-share p {
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.share-buttons a {
+    display: inline-block;
+    padding: 8px 15px;
+    margin: 0 5px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    transition: opacity 0.3s;
+}
+
+.share-btn.facebook { background-color: #3b5998; }
+.share-btn.twitter { background-color: #00acee; }
+.share-btn.whatsapp { background-color: #25d366; }
+
+
+/* --- Styles du Formulaire de Paiement --- */
+
+.payment-content {
+    padding: 40px 20px;
+    background-color: var(--color-light-bg); /* Un fond léger pour démarquer la page */
+    min-height: 80vh;
+}
+
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: var(--color-background);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-top: 5px solid var(--color-primary); /* Ligne d'accent rouge */
+}
+
+.payment-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.payment-header h2 {
+    color: var(--color-secondary);
+    margin-bottom: 15px;
+}
+
+.item-description {
+    font-size: 1.1em;
+    color: var(--color-text);
+}
+
+.price {
+    font-size: 1.5em;
+    color: var(--color-primary);
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+.security-note {
+    text-align: center;
+    color: #008000; /* Vert pour la sécurité */
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size: 0.9em;
+}
+
+/* Styles pour les champs et groupes de formulaire */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: var(--color-secondary);
+}
+
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.form-group input[type="text"]:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 5px rgba(229, 0, 0, 0.3);
+    outline: none;
+}
+
+/* Alignement des champs d'expiration et CVV côte à côte */
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    flex-grow: 1;
+}
+
+.submit-payment {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    padding: 15px;
+    font-size: 1.2em;
+}
+
+.accepted-cards {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* --- Styles de la Page de Succès de Paiement --- */
+
+.success-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    min-height: 80vh;
+    background-color: #e8f9e8; /* Vert très clair, couleur de succès */
+}
+
+.success-box {
+    max-width: 600px;
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-top: 5px solid #28a745; /* Ligne d'accent verte */
+}
+
+.icon-success {
+    font-size: 3em;
+    color: #28a745; /* Vert vif pour le succès */
+    margin-bottom: 20px;
+}
+
+.success-box h2 {
+    color: #28a745;
+    margin-bottom: 15px;
+    font-size: 2em;
+}
+
+.message-success {
+    font-size: 1.1em;
+    margin-bottom: 25px;
+}
+
+.instruction {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 20px;
+}
+
+/* Style spécifique pour le bouton final de téléchargement */
+.download-final-button {
+    background-color: #28a745; /* Vert pour l'action finale */
+    border-color: #28a745;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    margin: 20px auto;
+    display: block; /* S'assurer qu'il prend toute la largeur disponible dans le box */
+    width: fit-content;
+}
+
+.download-final-button:hover {
+    background-color: #1e7e34; /* Vert plus sombre au survol */
+}
+
+.next-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+
+/* --- Styles de la Page Compte (Connexion/Inscription) --- */
+
+.account-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alignement en haut */
+    padding: 60px 20px;
+    min-height: 80vh;
+    background-color: var(--color-light-bg);
+}
+
+.account-container {
+    max-width: 450px;
+    width: 100%;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.account-title {
+    text-align: center;
+    color: var(--color-secondary);
+    margin-bottom: 25px;
+}
+
+/* --- Styles des Onglets (Tabs) --- */
+.tab-buttons {
+    display: flex;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    flex-grow: 1;
+    padding: 15px 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #999;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s;
+}
+
+.tab-btn.active {
+    color: var(--color-primary);
+    border-bottom: 3px solid var(--color-primary);
+}
+
+.tab-btn:hover:not(.active) {
+    color: var(--color-text);
+}
+
+/* Masquer le contenu inactif */
+.tab-content {
+    display: none;
+    padding-top: 20px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-content h3 {
+    text-align: center;
+    color: var(--color-secondary);
+    margin-bottom: 20px;
+}
+
+/* Réutilisation des styles de formulaire */
+.account-container .form-group input {
+    /* Style déjà défini dans les autres pages, on s'assure qu'il est appliqué ici */
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.forgot-password {
+    display: block;
+    text-align: right;
+    color: var(--color-secondary);
+    text-decoration: none;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+}
+
+.submit-account-btn {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
+}
+
+/* Définition des Variables de Couleurs */
+:root {
+    --color-primary: #E50000; 
+    --color-secondary: #001F3F; 
+    --color-background: #FFFFFF; 
+    --color-text: #333333; 
+    --color-light-bg: #F8F8F8; 
+}
+
+/* Styles Généraux et Typographie */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-background);
+}
+
+/* Assurer la cohérence du conteneur principal */
+.home-content,
+.predications-page-content,
+.account-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- 1. En-tête et Navigation --- */
+.main-header {
+    /* ... styles de l'en-tête ... */
+}
+/* ... autres styles de navigation ... */
+
+
+/* --- Boutons et Liens d'Action (CTA) --- */
+.cta-button {
+    /* ... styles des boutons ... */
+}
+/* ... autres styles de boutons ... */
+
+
+/* --- Barre de Recherche Stylée (Inspirée de Google) --- */
+.search-section {
+    /* ... styles de la section de recherche ... */
+}
+/* ... autres styles de la barre de recherche ... */
+
+
+/* --- Style de la Section Vision (Trône de Feu - Principalement pour index.html) --- */
+.vision-section {
+    /* ... styles de la section vision ... */
+}
+/* ... autres styles de la vision ... */
+
+
+/* --- Liste des Prédications (pour index.html - affichage vertical) --- */
+/* Ceci doit être le style pour la page d'accueil si vous voulez une liste verticale */
+.predications-list {
+    /* ... styles de la liste verticale (1fr) ... */
+}
+.predication-card {
+    /* ... styles des cartes ... */
+}
+
+
+/* ---------------------------------------------------------------- */
+/* --- NOUVEAUX STYLES POUR LA PAGE predicationS.html (Catalogue) --- */
+/* ---------------------------------------------------------------- */
+
+.predications-page-content h1 {
+    text-align: center;
+    color: var(--color-secondary);
+    margin-bottom: 20px;
+}
+
+.all-predications-list {
+    display: grid;
+    /* Affichage en grille adaptatif (3 colonnes environ) */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.predication-card {
+    /* Assurer que chaque carte prend toute la hauteur de la grille et que le bouton est en bas */
+    display: flex;
+    flex-direction: column;
+}
+
+.predication-card .summary {
+    flex-grow: 1; /* Permet au résumé de prendre l'espace restant */
+    margin-bottom: 15px;
+}
+
+.predication-card .cta-button {
+    margin-top: auto; 
+    align-self: flex-start;
+}
+/* ... Ajoutez ici tous les autres styles des autres pages (détail, paiement, compte) ... */
+
+/* --- Pied de Page --- */
+.main-footer {
+    /* ... styles du pied de page ... */
+}
+
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    /* ... styles responsives ... */
+    
+    .all-predications-list {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile pour la page catalogue */
+    }
+}

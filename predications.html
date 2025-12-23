@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toutes les Prédications - Prédication du Royaume</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">Prédication du Royaume</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="predications.html">Prédications</a></li>
+                <li><a href="compte.html">Mon Compte</a></li>
+                <li><a href="#newsletter">Newsletter</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="predications-page-content">
+        <h1>Toutes les Prédications du Royaume</h1>
+        
+        <section class="search-section">
+            <h2 style="font-size: 1.5em;">Recherchez par Titre ou par Prêcheur</h2>
+            <div class="search-bar">
+                <input type="text" placeholder="Entrez un mot-clé..." id="search-input">
+                <button type="button">Rechercher</button>
+            </div>
+        </section>
+
+        <section class="all-predications-list" id="all-predications-container">
+            
+        </section>
+
+        <div class="pagination" style="text-align: center; margin-top: 40px; margin-bottom: 20px;">
+            <button id="prev-btn" class="cta-button secondary" style="padding: 8px 15px;" disabled>Précédent</button>
+            
+            <span id="page-status" style="margin: 0 15px;">Chargement...</span> 
+            
+            <button id="next-btn" class="cta-button" style="padding: 8px 15px;">Suivant</button>
+        </div>
+        
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2024 Prédication du Royaume. Tous droits réservés.</p>
+        <div class="footer-links">
+            <a href="#">Politique de Confidentialité</a>
+            <a href="#">Conditions d'Utilisation</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script> 
+</body>
+</html>
